@@ -75,3 +75,55 @@ Overview:
     - this may require you to register on PyPi first
 
 11. Put your main (resp. test) code in `my_project/` (resp. `test/`)
+
+## How to do stuff
+
+### Run your code as an application
+
+This will execute the file `my_project/__main__.py`:
+```bash
+python -m my_project 
+```
+
+### Run unit tests
+
+```bash
+python -m unittest discover -s test -t .
+```
+
+> Tests are automatically run in CI, on all pushes on all branches.
+> There, tests are executed on multiple OS (Win, Mac, Ubuntu) and on multiple Python versions (from `3.8` to `3.11`).
+
+### Restore dev dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Release a new version on PyPi
+
+> This paragraph is more understandable if the reader has some background about [GitFlow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+
+GitHub actions automatically release a new version of `my_project` on PyPi whenever commits are pushed on either the `main`/`master` or `develop` branches, as well as when new tags are pushed.
+
+Tags are assumed to consist of [semantic versioning](https://semver.org/) strings of the form `Major.Minor.Patch` where `Major`, `Minor`, and `Patch` are non-negative integers.
+
+So, to release version `X.Y.Z`, developers must:
+
+1. tag a commit on the `master`/`main`/`develop` branch, using `X.Y.Z` as the tag label
+    ```bash
+    git tag -a 'X.Y.Z' -m <a message here describing the version>
+    ```
+
+2. push the tag
+    ```bash
+    git push --follow-tags
+    ```
+
+3. GitHub Actions will then run tests and, if all of them succeed, release the code on PyPi.
+After the release, users will be able to install your code via Pip.
+
+> Non-tagged commits pushed on the `master`/`main`/`develop` branch will trigger __dev releases__.
+> Dev releases are automatically tagged as `X.Y.Y.devN`, where
+> - `X.Y.Y` is the value of the __most recent__ version tag
+> - `N` is the amount of commits following the most recent version tag 
