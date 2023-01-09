@@ -49,7 +49,7 @@ jobs:
 
       - name: Get Node Version
         id: get-node-version
-        run: echo ::set-output name=version::$(cat package.json | grep node | awk -F'"' '{print $4;}')
+        run: echo ::set-output name=version::$(jq -r .engines.node package.json)
 
       - uses: actions/setup-node@v3
         with:
