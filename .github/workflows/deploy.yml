@@ -44,33 +44,10 @@ jobs:
       - name: Pack
         run: python -m build
 
-      - name: Archive Dist Artifacts
-        if: failure() || success()
-        uses: actions/upload-artifact@v2
-        with:
-          name: dist
-          path: './dist'
-
-      - name: Upload
-        run: python -m twine upload dist/*
+      - name: Release
+        run: |
+          npm install
+          npx semantic-release
         env:
           TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
           TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
-
-      - name: Get Version
-        id: get-version
-        run: echo ::set-output name=version::$(python setup.py get_project_version | tail -n 1)
-
-      - name: Release Assets
-        id: upload-release-assets
-        run: |
-          set -x
-          ASSETS=()
-          for A in dist/*; do
-            ASSETS+=("-a" "$A")
-            echo "Releasing $A"
-          done
-          RELEASE_TAG='${{ steps.get-version.outputs.version }}'
-          hub release create "${ASSETS[@]}" -m "$RELEASE_TAG" "$RELEASE_TAG"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
