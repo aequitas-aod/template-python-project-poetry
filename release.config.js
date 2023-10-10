@@ -1,4 +1,5 @@
 var publishCmd = `
+python -m build
 python -m twine upload dist/*
 `
 var config = require('semantic-release-preconfigured-conventional-commits');

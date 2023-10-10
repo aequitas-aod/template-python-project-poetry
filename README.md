@@ -27,12 +27,9 @@ Overview:
 │   └── __main__.py         # application entry point
 ├── test/                   # test package (should contain unit tests)
 ├── .github/                # configuration of GitHub CI
-│   ├── scripts/            # contains bash script to be used in CI
-│   │   └── retry.sh        # script automating timed retry of release operations
 │   └── workflows/          # configuration of GitHub Workflows
 │       ├── check.yml       # runs tests on multiple OS and versions of Python
-│       ├── deploy.yml      # if check succeeds, and the current branch is one of {main, master, develop}, triggers automatic releas on PyPi
-│       └── dockerify.yml   # if deploy succeeds, builds a Docker image and pushes it on DockerHub 
+│       └── deploy.yml      # if check succeeds, and the current branch is one of {main, master}, triggers automatic releas on PyPi
 ├── MANIFEST.in             # file stating what to include/exclude in releases 
 ├── LICENSE                 # license file (Apache 2.0 by default)
 ├── pyproject.toml          # declares build dependencies
@@ -72,11 +69,14 @@ Overview:
 
 9. Set your project's release metadata and dependencies by editing `setup.py`
 
-10. Add your PyPi credentials as secrets of the GitHub repository 
+10. Change the assignee for pull-requests for automatic dependency updates by editing `renovate.json`
+    + currently defaults to @gciatto
+
+11. Add your PyPi credentials as secrets of the GitHub repository 
     - `PYPI_USERNAME` (resp. `PYPI_PASSWORD`) for your username (resp. password)
     - this may require you to register on PyPi first
 
-11. Put your main (resp. test) code in `my_project/` (resp. `test/`)
+12. Put your main (resp. test) code in `my_project/` (resp. `test/`)
 
 ## How to do stuff
 
@@ -99,7 +99,7 @@ python -m unittest discover -s test -t .
 ### Restore dev dependencies
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements-dev.txt
 ```
 
 ### Release a new version on PyPi
