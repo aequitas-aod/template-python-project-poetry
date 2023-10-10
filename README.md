@@ -76,7 +76,11 @@ Overview:
     - `PYPI_USERNAME` (resp. `PYPI_PASSWORD`) for your username (resp. password)
     - this may require you to register on PyPi first
 
-12. Put your main (resp. test) code in `my_project/` (resp. `test/`)
+12. Generate a GitHub token and add it as a secret of the GitHub repository, named `GITHUB_TOKEN`
+    - cf. <https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic>
+    - the token must allow pushing to the repository
+
+13. Put your main (resp. test) code in `my_project/` (resp. `test/`)
 
 ## How to do stuff
 
