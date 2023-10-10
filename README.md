@@ -66,7 +66,8 @@ Overview:
 
 7. Check the Python version and OS tests should be run on in CI, by looking the file `.github/workflows/check.yml`
 
-8. Add your development dependencies to `requirements.txt`
+8. Add your runtime dependencies to `requirements.txt`
+    + and development-only dependencies here `requirements-dev.txt`
 
 9. Set your project's release metadata and dependencies by editing `setup.py`
 
