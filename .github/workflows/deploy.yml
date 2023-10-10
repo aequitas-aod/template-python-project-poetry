@@ -1,28 +1,16 @@
 name: deploy
 on:
-  workflow_run:
-    workflows:
-      - check
-    types:
-      - completed
-    branches:
-      - master
-      - main
-      - develop
-env:
-  PROJECT_NAME: my_project
-  WORKFLOW: deploy
+  workflow_call:
+  workflow_dispatch:
 jobs:
-  deploy:
+  release:
     concurrency:
       # Only one release job at a time. Strictly sequential.
       group: deploy
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
-    name: Release on PyPi and GitHub
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0 # all history
 
@@ -31,25 +19,22 @@ jobs:
 
       - name: Get Python Version
         id: get-python-version
-        run: echo ::set-output name=version::$(cat .python-version)
+        run: echo version=$(python setup.py get_minimum_python_version | tail -n 1) >> $GITHUB_OUTPUT
 
       - name: Setup Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ steps.get-python-version.outputs.version }}
 
       - name: Restore Python dependencies
-        run: pip install -r requirements.txt
+        run: pip install -r requirements-dev.txt
 
       - name: Change default logging level
         run: sed -i -e 's/DEBUG/WARN/g' my_project/__init__.py
 
-      - name: Pack
-        run: python -m build
-
       - name: Get Node Version
         id: get-node-version
-        run: echo ::set-output name=version::$(jq -r .engines.node package.json)
+        run: echo version=$(jq -r .engines.node package.json) >> $GITHUB_OUTPUT
 
       - uses: actions/setup-node@v3
         with:
@@ -62,3 +47,4 @@ jobs:
         env:
           TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
           TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
