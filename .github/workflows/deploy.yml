@@ -22,7 +22,7 @@ jobs:
         run: echo version=$(python setup.py get_minimum_python_version | tail -n 1) >> $GITHUB_OUTPUT
 
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ steps.get-python-version.outputs.version }}
 
