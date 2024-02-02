@@ -1,95 +1,34 @@
 {
   "extends": [
-    "config:base", ":rebaseStalePrs", ":semanticCommits", ":semanticCommitTypeAll(chore)"
+    "config:base",
+    ":rebaseStalePrs",
+    ":semanticCommits"
   ],
-  "assignees": ["gciatto"],
+  "assignees": [
+    "gciatto"
+  ],
   "automerge": true,
   "dependencyDashboard": true,
   "git-submodules": {
     "enabled": true
   },
   "includeForks": true,
-  "labels": ["dependencies"],
+  "ignorePaths": [
+    ".python-version"
+  ],
   "packageRules": [
     {
       "description": "Updates to GitHub Actions should be tagged as 'ci'",
-      "matchPaths": [".github/workflows/*.yml", ".github/workflows/*.yaml"],
+      "matchPaths": [
+        ".github/workflows/*.yml",
+        ".github/workflows/*.yaml"
+      ],
       "semanticCommitType": "ci"
-    },
-    {
-      "matchDepNames": "windows github actions runner",
-      "extractVersion": "^win(?<version>\\d\\d)\/\\d+.\\.\\d+$"
-    },
-    {
-      "matchDepNames": "macos github actions runner",
-      "extractVersion": "^macOS-(?<version>\\d\\d)\/\\d+.\\.\\d+$"
-    },
-    {
-      "matchDepNames": "ubuntu github actions runner",
-      "extractVersion": "^ubuntu(?<version>\\d\\d)\/\\d+.\\.\\d+$"
     }
   ],
   "prConcurrentLimit": 25,
-  "prCreation": "immediate",
   "prHourlyLimit": 0,
-  "rebaseWhen": "behind-base-branch",
-  "regexManagers": [
-    {
-      "fileMatch": [
-        "^(workflow-templates|\\.github\\/workflows)\\/[^/]+\\.[Yy][Aa]?[Mm][Ll]$",
-        "(^|\\/)action\\.[Yy][Aa]?[Mm][Ll]$"
-      ],
-      "matchStrings": [
-          "\\s+node-version:\\s+'?\"?(?<version>\\d+(\\.\\d+)*)'?\"?"
-      ],
-      "depNameTemplate": "node",
-      "currentValueTemplate": "v{{{version}}}",
-      "packageNameTemplate": "nodejs/node",
-      "datasourceTemplate": "github-tags",
-      "versioningTemplate": "docker"
-    },
-    {
-      "fileMatch": [
-        "^(workflow-templates|\\.github\\/workflows)\\/[^/]+\\.[Yy][Aa]?[Mm][Ll]$",
-        "(^|\\/)action\\.[Yy][Aa]?[Mm][Ll]$"
-      ],
-      "matchStrings": [
-          "windows-\\d\\d(?<currentValue>\\d\\d)"
-      ],
-      "depNameTemplate": "windows github actions runner",
-      "packageNameTemplate": "actions/runner-images",
-      "datasourceTemplate": "github-releases",
-      "versioningTemplate": "docker"
-    },
-    {
-      "fileMatch": [
-        "^(workflow-templates|\\.github\\/workflows)\\/[^/]+\\.[Yy][Aa]?[Mm][Ll]$",
-        "(^|\\/)action\\.[Yy][Aa]?[Mm][Ll]$"
-      ],
-      "matchStrings": [
-          "macos-(?<currentValue>\\d\\d)"
-      ],
-      "depNameTemplate": "macos github actions runner",
-      "packageNameTemplate": "actions/runner-images",
-      "datasourceTemplate": "github-releases",
-      "versioningTemplate": "docker"
-    },
-    {
-      "fileMatch": [
-        "^(workflow-templates|\\.github\\/workflows)\\/[^/]+\\.[Yy][Aa]?[Mm][Ll]$",
-        "(^|\\/)action\\.[Yy][Aa]?[Mm][Ll]$"
-      ],
-      "matchStrings": [
-          "ubuntu-(?<currentValue>\\d\\d)\\.04"
-      ],
-      "depNameTemplate": "ubuntu github actions runner",
-      "packageNameTemplate": "actions/runner-images",
-      "datasourceTemplate": "github-releases",
-      "versioningTemplate": "docker"
-    }
-  ],
   "separateMajorMinor": true,
   "separateMinorPatch": true,
-  "separateMultipleMajor": true,
-  "stabilityDays": 0
+  "separateMultipleMajor": true
 }
