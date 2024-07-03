@@ -3,10 +3,8 @@ var testPypi = (process.env.RELEASE_TEST_PYPI || "false").toLowerCase() === "tru
 var pypiUsername = process.env.PYPI_USERNAME;
 var pypiPassword = process.env.PYPI_PASSWORD;
 
-var publishCmd = `
-poetry version -- \${nextRelease.version}
-poetry publish --build --username ${pypiUsername} --password ${pypiPassword}
-`
+var prepareCmd = "poetry version -- \${nextRelease.version}";
+var publishCmd = `poetry publish --build --username ${pypiUsername} --password ${pypiPassword}`;
 
 if (testPypi) {
     // test-pypi repository name is defined in poetry.toml
@@ -21,6 +19,7 @@ var config = require('semantic-release-preconfigured-conventional-commits');
 
 config.plugins.push(
     ["@semantic-release/exec", {
+        "prepareCmd" : prepareCmd,
         "publishCmd": publishCmd,
     }]
 )
