@@ -1,3 +1,10 @@
+## [2.1.3](https://github.com/aequitas-aod/template-python-project-poetry/compare/2.1.2...2.1.3) (2024-07-03)
+
+
+### Bug Fixes
+
+* split prepare and publish phases in semantic-release ([d01a515](https://github.com/aequitas-aod/template-python-project-poetry/commit/d01a515d42e7666e13feea1489e934e84d0c06bd))
+
 ## [2.1.2](https://github.com/aequitas-aod/template-python-project-poetry/compare/2.1.1...2.1.2) (2024-07-03)
 
 
