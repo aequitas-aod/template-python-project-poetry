@@ -4,6 +4,7 @@ on:
   workflow_dispatch:
 jobs:
   release:
+    name: Release
     concurrency:
       # Only one release job at a time. Strictly sequential.
       group: deploy
