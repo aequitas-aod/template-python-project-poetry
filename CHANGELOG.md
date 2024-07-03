@@ -1,3 +1,10 @@
+## [2.1.6](https://github.com/aequitas-aod/template-python-project-poetry/compare/2.1.5...2.1.6) (2024-07-03)
+
+
+### Bug Fixes
+
+* **ci:** test release on all branches (use cmdline) ([db73c87](https://github.com/aequitas-aod/template-python-project-poetry/commit/db73c87689116f79322da3257813ea3327ccb922))
+
 ## [2.1.5](https://github.com/aequitas-aod/template-python-project-poetry/compare/2.1.4...2.1.5) (2024-07-03)
 
 
