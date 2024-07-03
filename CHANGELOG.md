@@ -1,3 +1,33 @@
+## [2.0.0](https://github.com/aequitas-aod/template-python-project-poetry/compare/1.0.1...2.0.0) (2024-07-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* use poetry instead of setup.py
+
+### Features
+
+* use poetry instead of setup.py ([f8bcfa1](https://github.com/aequitas-aod/template-python-project-poetry/commit/f8bcfa14bf7992b16e77929b6f5112dd7f977383))
+
+
+### Dependency updates
+
+* **deps:** update dependency pandas to v2.2.1 ([be273ce](https://github.com/aequitas-aod/template-python-project-poetry/commit/be273ce0d591432389c5da7d8bee343079db4871))
+* **deps:** update dependency pandas to v2.2.2 ([dd4507a](https://github.com/aequitas-aod/template-python-project-poetry/commit/dd4507a5ae73bd2019729786dcbadb051a024049))
+* **deps:** update dependency scikit-learn to v1.4.1.post1 ([d24ef8b](https://github.com/aequitas-aod/template-python-project-poetry/commit/d24ef8bc4bedf055630f95eb04a6db1833b3d4d7))
+* **deps:** update dependency scikit-learn to v1.4.2 ([613452a](https://github.com/aequitas-aod/template-python-project-poetry/commit/613452a825e12cb0f5f2962e6ba5dd22dadf058a))
+* **deps:** update dependency scikit-learn to v1.5.0 ([6d42082](https://github.com/aequitas-aod/template-python-project-poetry/commit/6d4208275a45736a4d4161dc88324aa3f6ca2b86))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.86 ([847ef5a](https://github.com/aequitas-aod/template-python-project-poetry/commit/847ef5a1ee00d72a7eb330d7f089c3130ced26ff))
+* **deps:** update node.js to 20.12 ([2ffe13a](https://github.com/aequitas-aod/template-python-project-poetry/commit/2ffe13aeba2daea05735531926badafc0c6e78e2))
+* **deps:** update node.js to 20.13 ([65182e8](https://github.com/aequitas-aod/template-python-project-poetry/commit/65182e88da58a8ad06bffb712572e388309767c2))
+* **deps:** update node.js to 20.14 ([a132a42](https://github.com/aequitas-aod/template-python-project-poetry/commit/a132a42cf67d01fdf79778ffde824fb3300527ac))
+* **deps:** update node.js to 20.15 ([76a552b](https://github.com/aequitas-aod/template-python-project-poetry/commit/76a552bc42965f6ee23754065b2673403b26a91c))
+
+
+### General maintenance
+
+* **release:** simplify renovate conf ([23da9b6](https://github.com/aequitas-aod/template-python-project-poetry/commit/23da9b61d38adbe974c53240f05fb71ea685fb03))
+
 ## [1.0.1](https://github.com/aequitas-aod/template-python-project/compare/1.0.0...1.0.1) (2024-02-02)
 
 
