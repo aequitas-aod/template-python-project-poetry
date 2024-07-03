@@ -13,7 +13,45 @@ on:
   pull_request:
   workflow_dispatch:
 jobs:
+  check:
+    runs-on: ubuntu-latest
+    name: Preliminary Checks
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # all history
+
+      - name: Install Poetry
+        run: pip install -r requirements.txt
+
+      - name: Restore Development Environment
+        run: poetry install
+
+      - name: Check code is syntactically correct
+        shell: bash
+        run: poetry run poe compile
+
+      - name: Static Checks
+        shell: bash
+        run: poetry run poe mypy
+
+      - name: Test with Coverage
+        shell: bash
+        run: |
+          poetry run poe coverage
+          poetry run poe coverage-report
+          poetry run poe coverage-html
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: coverage-${{ github.head_ref }}-${{ github.sha }}
+          path: htmlcov
+          if-no-files-found: ignore
+          overwrite: true
+
   test:
+    needs: check
     strategy:
       fail-fast: false
       matrix:
@@ -49,6 +87,7 @@ jobs:
         run: poetry run poe test
 
   deploy:
+    name: Deploy
     needs:
       - test
     uses: ./.github/workflows/deploy.yml

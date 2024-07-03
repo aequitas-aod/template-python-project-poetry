@@ -23,6 +23,11 @@ pytest = "^8.2.2"
 
 [tool.poe.tasks]
 test = "python -m unittest discover -v -s tests -p '*.py'"
+coverage = "coverage run -m unittest discover -v -s tests -p '*.py'"
+coverage-report = "coverage report -m"
+coverage-html = "coverage html"
+mypy = "mypy my_project tests"
+compile = "python -m compileall my_project tests"
 
 [tool.poetry.scripts]
 my_project = "my_project:main"
