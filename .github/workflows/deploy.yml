@@ -9,7 +9,7 @@ jobs:
       group: deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout Code
         uses: actions/checkout@v4
         with:
           fetch-depth: 0 # all history
@@ -21,13 +21,11 @@ jobs:
         id: get-python-version
         run: echo version=$(python setup.py get_minimum_python_version | tail -n 1) >> $GITHUB_OUTPUT
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: ${{ steps.get-python-version.outputs.version }}
+      - name: Install Poetry
+        run: pip install -r requirements.txt
 
-      - name: Restore Python dependencies
-        run: pip install -r requirements-dev.txt
+      - name: Restore Development Environment
+        run: poetry install
 
       - name: Change default logging level
         run: sed -i -e 's/DEBUG/WARN/g' my_project/__init__.py
@@ -48,4 +46,5 @@ jobs:
           TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
           TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
-          RELEASE_DRY_RUN: ${{ contains(github.repository, 'template') }}
+          RELEASE_TEST_PYPI: ${{ contains(github.repository, 'template') }}
+          RELEASE_DRY_RUN: ${{ github.ref_name != 'master' && github.ref_name != 'main' }}

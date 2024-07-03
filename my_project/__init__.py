@@ -12,5 +12,13 @@ class MyClass:
         return "Hello World"
 
 
+def main():
+    # this is the main module of your app
+    # it is only required if your project must be runnable
+    # this is the script to be executed whenever some users writes `python -m my_project` on the command line, eg.
+    x = MyClass().my_method()
+    print(x)
+
+
 # let this be the last line of this file
 logger.info("my_project loaded")
