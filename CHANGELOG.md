@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/aequitas-aod/template-python-project-poetry/compare/2.1.0...2.1.1) (2024-07-03)
+
+
+### Bug Fixes
+
+* rename step in ci just to trigger new release ([d7f1d15](https://github.com/aequitas-aod/template-python-project-poetry/commit/d7f1d15e0bb590431099752e0b8529d9934df062))
+
 ## [2.1.0](https://github.com/aequitas-aod/template-python-project-poetry/compare/2.0.0...2.1.0) (2024-07-03)
 
 
