@@ -1,3 +1,10 @@
+## [2.1.0](https://github.com/aequitas-aod/template-python-project-poetry/compare/2.0.0...2.1.0) (2024-07-03)
+
+
+### Features
+
+* **ci:** add preliminary static checks and coverage before testing ([8566322](https://github.com/aequitas-aod/template-python-project-poetry/commit/8566322028fcfa92188be58627b13362dfa9b106))
+
 ## [2.0.0](https://github.com/aequitas-aod/template-python-project-poetry/compare/1.0.1...2.0.0) (2024-07-03)
 
 
