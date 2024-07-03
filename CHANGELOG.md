@@ -1,3 +1,25 @@
+## [2.1.4](https://github.com/aequitas-aod/template-python-project-poetry/compare/2.1.3...2.1.4) (2024-07-03)
+
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.86 ([4bcc762](https://github.com/aequitas-aod/template-python-project-poetry/commit/4bcc7626f5b8643a7381b0c9c71b3d7a20a91ed1))
+
+
+### Bug Fixes
+
+* **deps:** update dependency scikit-learn to v1.5.1 ([edd9a84](https://github.com/aequitas-aod/template-python-project-poetry/commit/edd9a8415a5caaa2a64038a15c73cb4715e95765))
+
+
+### Revert previous changes
+
+* Revert "chore(deps): update dependency semantic-release-preconfigured-convent…" ([a51ce70](https://github.com/aequitas-aod/template-python-project-poetry/commit/a51ce70691409b04ea0948bb5cda8c562486b323))
+
+
+### General maintenance
+
+* improve readme ([9d62046](https://github.com/aequitas-aod/template-python-project-poetry/commit/9d620463be3b80a0da0a575bacbf9c3cce943982))
+
 ## [2.1.3](https://github.com/aequitas-aod/template-python-project-poetry/compare/2.1.2...2.1.3) (2024-07-03)
 
 

@@ -3,7 +3,7 @@ name = "template-python-project-poetry"
 packages = [
     { include = "my_project" },
 ]
-version = "2.1.3"
+version = "2.1.4"
 description = "A template for Python projects, using Poetry"
 authors = ["Giovanni Ciatto <giovanni.ciatto@unibo.it>"]
 license = "Apache 2.0"
