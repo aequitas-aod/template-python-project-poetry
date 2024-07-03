@@ -1,3 +1,10 @@
+## [2.1.2](https://github.com/aequitas-aod/template-python-project-poetry/compare/2.1.1...2.1.2) (2024-07-03)
+
+
+### Bug Fixes
+
+* **ci:** pypi credentials ([42aa559](https://github.com/aequitas-aod/template-python-project-poetry/commit/42aa559de022c8a9381779d47750428195f708d8))
+
 ## [2.1.1](https://github.com/aequitas-aod/template-python-project-poetry/compare/2.1.0...2.1.1) (2024-07-03)
 
 
