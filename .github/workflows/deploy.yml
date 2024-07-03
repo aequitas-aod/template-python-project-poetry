@@ -40,9 +40,10 @@ jobs:
           node-version: ${{ steps.get-node-version.outputs.version }}
 
       - name: Release
+        shell: bash
         run: |
           npm install
-          npx semantic-release
+          npx semantic-release --branches `git branch --show-current`
         env:
           PYPI_USERNAME: ${{ secrets.PYPI_USERNAME }}
           PYPI_PASSWORD: ${{ secrets.PYPI_PASSWORD }}

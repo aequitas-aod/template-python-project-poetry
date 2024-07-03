@@ -41,8 +41,4 @@ if (!dryRun) {
     );
 }
 
-// Release on all branches, no matter the name.
-// GA will make the release dry-run if the branch is not "main" or "master".
-config.branches = [ "master", "main", "*" ];
-
 module.exports = config
