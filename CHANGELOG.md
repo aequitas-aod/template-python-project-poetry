@@ -1,3 +1,14 @@
+## [2.1.7](https://github.com/aequitas-aod/template-python-project-poetry/compare/2.1.6...2.1.7) (2024-07-10)
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.89 ([ef9d882](https://github.com/aequitas-aod/template-python-project-poetry/commit/ef9d8829ac28eb125a332aa3d57791e10d3caf69))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.90 ([1dab7eb](https://github.com/aequitas-aod/template-python-project-poetry/commit/1dab7eb84b1619cf0d4682a4fd6eea9d5925df91))
+
+### Bug Fixes
+
+* move my_project folder upon renaming ([dcba4ab](https://github.com/aequitas-aod/template-python-project-poetry/commit/dcba4ab25a0a0c619ee8afacad9ff01a6f5bcfd6))
+
 ## [2.1.6](https://github.com/aequitas-aod/template-python-project-poetry/compare/2.1.5...2.1.6) (2024-07-03)
 
 
