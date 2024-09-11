@@ -1,3 +1,39 @@
+## [2.1.8](https://github.com/aequitas-aod/template-python-project-poetry/compare/2.1.7...2.1.8) (2024-09-11)
+
+### Dependency updates
+
+* **deps:** update dependency coverage to v7.6.0 ([c8e18d2](https://github.com/aequitas-aod/template-python-project-poetry/commit/c8e18d27b3717fab5a306f92e5cef46bbfe8112c))
+* **deps:** update dependency coverage to v7.6.1 ([39241c5](https://github.com/aequitas-aod/template-python-project-poetry/commit/39241c5f705195e12f71176c4d9b5abfdc4340f1))
+* **deps:** update dependency mypy to v1.11.0 ([c074706](https://github.com/aequitas-aod/template-python-project-poetry/commit/c07470647ca9a102896f61e3e997ad6f9e52cc36))
+* **deps:** update dependency mypy to v1.11.1 ([1cf7087](https://github.com/aequitas-aod/template-python-project-poetry/commit/1cf70874502342227f8337955ed31ad478d04bb3))
+* **deps:** update dependency mypy to v1.11.2 ([59ae46d](https://github.com/aequitas-aod/template-python-project-poetry/commit/59ae46d261ccea4b6bd091097b8ce6f506c14c8a))
+* **deps:** update dependency poethepoet to ^0.28.0 ([12309fe](https://github.com/aequitas-aod/template-python-project-poetry/commit/12309fe6f715a084bc743701f8dfea20c3d4a425))
+* **deps:** update dependency pytest to v8.3.1 ([b8b9269](https://github.com/aequitas-aod/template-python-project-poetry/commit/b8b926921892ebdad8c8cd091d1e1535af98f457))
+* **deps:** update dependency pytest to v8.3.2 ([0a38ca0](https://github.com/aequitas-aod/template-python-project-poetry/commit/0a38ca072a39800e5d381d7b6957ef06565f90a6))
+* **deps:** update dependency pytest to v8.3.3 ([b9b0b46](https://github.com/aequitas-aod/template-python-project-poetry/commit/b9b0b46a9cab6e08d2228cdb5cb3394a5e10d36e))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.101 ([948ced1](https://github.com/aequitas-aod/template-python-project-poetry/commit/948ced132b873882d0fa41a518816a161ce1fa1e))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.102 ([0dd3a31](https://github.com/aequitas-aod/template-python-project-poetry/commit/0dd3a311121f4a6b3edafcd3ef4d4053d9724dd3))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.103 ([bc4ebf0](https://github.com/aequitas-aod/template-python-project-poetry/commit/bc4ebf0dab5c9a05e457b7aba6f7aef4f0c44bd1))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.104 ([4516f19](https://github.com/aequitas-aod/template-python-project-poetry/commit/4516f19200fd485be7f40ea83bd7d4a891624bc5))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.105 ([e00b988](https://github.com/aequitas-aod/template-python-project-poetry/commit/e00b988bad39ff8f3b056d0d4732794bace329ea))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.91 ([0f31cdc](https://github.com/aequitas-aod/template-python-project-poetry/commit/0f31cdcfb5288420a8bd621111abbb7113b2a0fc))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.92 ([f27a563](https://github.com/aequitas-aod/template-python-project-poetry/commit/f27a5638cd1064a14e66b17106ec2ad554791b7c))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.93 ([a845b00](https://github.com/aequitas-aod/template-python-project-poetry/commit/a845b00c817ce3a9530b100d2cc2879d56a8ec1d))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.94 ([c83cd26](https://github.com/aequitas-aod/template-python-project-poetry/commit/c83cd26736eabca651769311c1e2d5bcdb7d93f7))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.95 ([663ba6c](https://github.com/aequitas-aod/template-python-project-poetry/commit/663ba6ce2976683f792dc2c475a63a680187168f))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.96 ([16ec1e2](https://github.com/aequitas-aod/template-python-project-poetry/commit/16ec1e2d6d717440f2e6573f39e710fa7e7141c7))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.97 ([5df66c6](https://github.com/aequitas-aod/template-python-project-poetry/commit/5df66c6f80894ed0ce62ef07563efe9a4983b199))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.98 ([93d7116](https://github.com/aequitas-aod/template-python-project-poetry/commit/93d711610b05d4776e88ea819f8ce74c8b13f507))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.99 ([8932671](https://github.com/aequitas-aod/template-python-project-poetry/commit/893267187b02a7806b5ad6cffaeb0e46f9c4a5e4))
+* **deps:** update node.js to 20.16 ([ad9ed47](https://github.com/aequitas-aod/template-python-project-poetry/commit/ad9ed47d495f01ae3afe41df849c3d7a00b2879d))
+* **deps:** update node.js to 20.17 ([f7404b1](https://github.com/aequitas-aod/template-python-project-poetry/commit/f7404b12361181ebd25c2befbe939d6837fa1a42))
+* **deps:** update npm to v10.8.2 ([81a3216](https://github.com/aequitas-aod/template-python-project-poetry/commit/81a321619b7f9826fd558ae243d401b74656108e))
+* **deps:** update npm to v10.8.3 ([3c3409d](https://github.com/aequitas-aod/template-python-project-poetry/commit/3c3409dc8268cf919789778b901331da872b40c5))
+
+### Bug Fixes
+
+* **deps:** update dependency scikit-learn to v1.5.2 ([2437ea0](https://github.com/aequitas-aod/template-python-project-poetry/commit/2437ea0f4b004c68a7f4a7ca5e9e661e659713a8))
+
 ## [2.1.7](https://github.com/aequitas-aod/template-python-project-poetry/compare/2.1.6...2.1.7) (2024-07-10)
 
 ### Dependency updates
