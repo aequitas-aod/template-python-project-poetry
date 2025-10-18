@@ -3,6 +3,7 @@ on:
   push:
     branches-ignore:
       - 'dependabot/**'
+      - 'renovate/**'
     paths-ignore:
       - '.gitignore'
       - '.mergify.yml'
@@ -23,7 +24,9 @@ jobs:
           fetch-depth: 0 # all history
 
       - name: Install Poetry
-        run: pip install -r requirements.txt
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install poetry
 
       - name: Restore Development Environment
         run: poetry install
@@ -77,7 +80,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install Poetry
-        run: pip install -r requirements.txt
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install poetry
 
       - name: Restore Development Environment
         run: poetry install
