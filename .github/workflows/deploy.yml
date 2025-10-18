@@ -18,6 +18,15 @@ jobs:
       - name: Get All Tags
         run: git fetch --tags -f
 
+      - name: Dry-run Release for Initial Commit
+        id: skip_release
+        run: |
+          if git rev-parse HEAD^1 >/dev/null 2>&1; then
+            echo "skip=false" >> $GITHUB_OUTPUT
+          else
+            echo "skip=true" >> $GITHUB_OUTPUT
+          fi
+
       - name: Get Python Version
         id: get-python-version
         run: echo version=$(python setup.py get_minimum_python_version | tail -n 1) >> $GITHUB_OUTPUT
@@ -49,4 +58,5 @@ jobs:
           PYPI_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
           RELEASE_TEST_PYPI: ${{ contains(github.repository, 'template') }}
-          RELEASE_DRY_RUN: ${{ github.ref_name != 'master' && github.ref_name != 'main' }}
+          # dry run if not on main/master branch, or if initial commit
+          RELEASE_DRY_RUN: ${{ steps.skip_release.outputs.skip == 'true' || (github.ref_name != 'master' && github.ref_name != 'main') }}

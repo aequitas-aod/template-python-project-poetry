@@ -17,4 +17,8 @@ done
 
 mv my_project $NEW_NAME
 
-rm .github/**/*.bak **/*.bak .*.bak *.bak *.sh
+rm .github/**/*.bak || true
+rm **/*.bak || true
+rm .*.bak || true
+rm *.bak || true
+rm *.sh || true
