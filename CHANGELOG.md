@@ -1,3 +1,14 @@
+## [2.3.0](https://github.com/aequitas-aod/template-python-project-poetry/compare/2.2.0...2.3.0) (2025-10-18)
+
+### Features
+
+* change default assignee in renovate.json upon template usage ([a2aced1](https://github.com/aequitas-aod/template-python-project-poetry/commit/a2aced11bb5f0fe59741ac1cf5f932b6b9326101))
+* dry-run release for first comit ([522d73e](https://github.com/aequitas-aod/template-python-project-poetry/commit/522d73ec3ed3dc2676c83c395cb1a558133c7827))
+
+### Bug Fixes
+
+* **ci:** avoid double workflow runs in renovate branches ([d35cd0a](https://github.com/aequitas-aod/template-python-project-poetry/commit/d35cd0af14ae427a702d6d59024069ced82dc773))
+
 ## [2.2.0](https://github.com/aequitas-aod/template-python-project-poetry/compare/2.1.7...2.2.0) (2025-10-18)
 
 ### Features
