@@ -34,6 +34,11 @@ jobs:
       - name: Remove init.yml
         run: rm .github/workflows/init.yml
 
+      - name: Change default assignee in renovate.json
+        run: |
+          sed -i'.bak' -e "s/gciatto/${{ github.actor }}/g" renovate.json
+        shell: bash
+
       - name: Add files and commit changes
         run: |
           git add .
