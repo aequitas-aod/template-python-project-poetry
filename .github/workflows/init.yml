@@ -12,12 +12,8 @@ permissions:
 jobs:
   run-script:
     name: run script
-
-    if: >-
-      ${{ !github.event.repository.is_template }}
-
+    if: !github.event.repository.is_template
     runs-on: ubuntu-latest
-
     steps:
       - name: Configure Git
         run: |
