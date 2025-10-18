@@ -3,6 +3,11 @@ var testPypi = (process.env.RELEASE_TEST_PYPI || "false").toLowerCase() === "tru
 var pypiUsername = process.env.PYPI_USERNAME;
 var pypiPassword = process.env.PYPI_PASSWORD;
 
+if (!pypiUsername || !pypiPassword) {
+    dryRun = true;
+    console.warn("PYPI_USERNAME or PYPI_PASSWORD not set. Running in dry-run mode.");
+}
+
 var prepareCmd = "poetry version -- \${nextRelease.version}";
 var publishCmd = `poetry publish --build --username ${pypiUsername} --password ${pypiPassword}`;
 
