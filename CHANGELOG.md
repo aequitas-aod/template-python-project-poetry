@@ -1,3 +1,9 @@
+## [2.3.1](https://github.com/aequitas-aod/template-python-project-poetry/compare/2.3.0...2.3.1) (2025-10-18)
+
+### Bug Fixes
+
+* avoid changing deploy.yml upon template instantiation ([527c8fa](https://github.com/aequitas-aod/template-python-project-poetry/commit/527c8fa3bf9e7697e07bae77ea5225c532893601))
+
 ## [2.3.0](https://github.com/aequitas-aod/template-python-project-poetry/compare/2.2.0...2.3.0) (2025-10-18)
 
 ### Features
