@@ -2,11 +2,12 @@
     "python.testing.unittestArgs": [
         "-v",
         "-s",
-        "./test",
+        "./tests",
         "-p",
         "*.py"
     ],
     "python.testing.pytestEnabled": false,
     "python.testing.unittestEnabled": true,
     "python.testing.autoTestDiscoverOnSaveEnabled": true,
+    "python-envs.pythonProjects": [],
 }
