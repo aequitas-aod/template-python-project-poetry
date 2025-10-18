@@ -2,6 +2,9 @@ name: deploy
 on:
   workflow_call:
   workflow_dispatch:
+permissions:
+  contents: write
+  packages: write
 jobs:
   release:
     name: Release
@@ -57,7 +60,6 @@ jobs:
         env:
           PYPI_USERNAME: ${{ secrets.PYPI_USERNAME }}
           PYPI_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
-          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
           RELEASE_TEST_PYPI: ${{ github.event.repository.is_template || contains(github.repository, 'template') }}
           # dry run if not on main/master branch, or if initial commit
           RELEASE_DRY_RUN: ${{ steps.skip_release.outputs.skip == 'true' || (github.ref_name != 'master' && github.ref_name != 'main') }}
