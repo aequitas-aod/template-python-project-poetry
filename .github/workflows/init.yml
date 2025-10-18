@@ -1,0 +1,44 @@
+name: Initialise Repo
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  run-script:
+    name: run script
+
+    if: >-
+      ${{ !github.event.repository.is_template }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Configure Git
+        run: |
+          git config --global user.name "${GITHUB_ACTOR}"
+          git config --global user.email "${GITHUB_ACTOR_EMAIL}"
+        shell: bash
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Rename project
+        run: bash rename-template.sh $(basename ${{ github.repository }})
+
+      - name: Remove init.yml
+        run: rm .github/workflows/init.yml
+
+      - name: Add files and commit changes
+        run: |
+          git add .
+          git commit -m "chore: initialise repository renaming files and removing init workflow [skip ci]"
+          git push -u origin $(git branch --show-current)
+        shell: bash
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
