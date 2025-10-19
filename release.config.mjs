@@ -1,15 +1,15 @@
-var dryRun = (process.env.RELEASE_DRY_RUN || "false").toLowerCase() === "true";
-var testPypi = (process.env.RELEASE_TEST_PYPI || "false").toLowerCase() === "true";
-var pypiUsername = process.env.PYPI_USERNAME;
-var pypiPassword = process.env.PYPI_PASSWORD;
+let dryRun = (process.env.RELEASE_DRY_RUN || "false").toLowerCase() === "true";
+let testPypi = (process.env.RELEASE_TEST_PYPI || "false").toLowerCase() === "true";
+let pypiUsername = process.env.PYPI_USERNAME;
+let pypiPassword = process.env.PYPI_PASSWORD;
 
 if (!pypiUsername || !pypiPassword) {
     dryRun = true;
     console.warn("PYPI_USERNAME or PYPI_PASSWORD not set. Running in dry-run mode.");
 }
 
-var prepareCmd = "poetry version -- \${nextRelease.version}";
-var publishCmd = `poetry publish --build --username ${pypiUsername} --password ${pypiPassword}`;
+let prepareCmd = "poetry version -- \${nextRelease.version}";
+let publishCmd = `poetry publish --build --username ${pypiUsername} --password ${pypiPassword}`;
 
 if (testPypi) {
     // test-pypi repository name is defined in poetry.toml
@@ -20,7 +20,7 @@ if (dryRun) {
     publishCmd = publishCmd.replace("--build", "--build --dry-run");
 }
 
-var config = require('semantic-release-preconfigured-conventional-commits');
+import config from 'semantic-release-preconfigured-conventional-commits' with {type: 'json'};
 
 config.plugins.push(
     ["@semantic-release/exec", {
@@ -46,4 +46,4 @@ if (!dryRun) {
     );
 }
 
-module.exports = config
+export default config;
