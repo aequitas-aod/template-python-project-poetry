@@ -123,3 +123,24 @@ The version number is updated automatically by the `semantic-release` tool, whic
 
 It is paramount that the commit messages follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification,
 in order for `semantic-release` to compute version numbers correctly.
+
+## Automatic updates of dependencies (via Renovate)
+
+The project is configured to use [Renovate](https://docs.renovatebot.com/) to automatically open pull-requests
+to update dependencies declared in `pyproject.toml`.
+
+By default, Renovate will assign such pull-requests to the user who created the repository from this template.
+
+If the project has tests (which is the case for this template), Renovate will only merge such pull-requests
+if all tests pass.
+
+When some test fails, Renovate will leave a comment on the pull-request, so that you can fix the issue manually.
+
+To make Renovate work, you need to enable it for your repository.
+To do so, please follow the instruction at <https://docs.renovatebot.com/getting-started/installing-onboarding/#hosted-githubcom-app>
+
+Finally, please remember to enable PR auto-merging in your repository settings, otherwise Renovate will not be able to merge
+the pull-requests it opens, even if all tests pass.
+To do so, please follow the instructions available [here](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-auto-merge-for-pull-requests-in-your-repository#managing-auto-merge).
+
+> Notice that the combination between Renovate, and Semantic Release may lead to a number of releases being created automatically.
