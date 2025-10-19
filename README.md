@@ -46,8 +46,10 @@ Overview:
     ```bash
     ./rename-template.sh my_project
     ```
-
+    
     This will coherently rename the template's project name with the one chosen by you (i.e. `my_project`, in this example)
+
+    * __Remark__: this step is now automatic thanks to the `init.yml` workflow which is triggered when using this template to create a new repository
 
 4. Commit & push
 
@@ -66,7 +68,7 @@ Overview:
 10. Change the assignee for pull-requests for automatic dependency updates by editing `renovate.json`
     + currently defaults to @gciatto
 
-11. Add your PyPi credentials as secrets of the GitHub repository
+11. Add your PyPI credentials as secrets of the GitHub repository
     - `PYPI_USERNAME` (resp. `PYPI_PASSWORD`) for your username (resp. password)
     - this may require you to register on PyPi first
 
@@ -121,4 +123,3 @@ The version number is updated automatically by the `semantic-release` tool, whic
 
 It is paramount that the commit messages follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification,
 in order for `semantic-release` to compute version numbers correctly.
-
