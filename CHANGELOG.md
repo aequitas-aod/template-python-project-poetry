@@ -1,3 +1,29 @@
+## [2.4.0](https://github.com/aequitas-aod/template-python-project-poetry/compare/2.3.1...2.4.0) (2025-10-19)
+
+### Features
+
+* remove the need for release token in deploy ([e04cc4f](https://github.com/aequitas-aod/template-python-project-poetry/commit/e04cc4f19d23503773b6f389fac479c43b21a515))
+* update poetry ([e0927d4](https://github.com/aequitas-aod/template-python-project-poetry/commit/e0927d47da111b00a4c24e3d3e7e2842d8d53173))
+* update renovate config ([cff7985](https://github.com/aequitas-aod/template-python-project-poetry/commit/cff7985fd4f6fc6e3e60faf509fdb8d7069b8e7b))
+
+### Dependency updates
+
+* **deps:** update dependency coverage to v7.6.12 ([#94](https://github.com/aequitas-aod/template-python-project-poetry/issues/94)) ([8a685c3](https://github.com/aequitas-aod/template-python-project-poetry/commit/8a685c39475c7a326f3279ac2b4e2b42db36184f))
+* **deps:** update dependency poetry to v1.8.5 ([#95](https://github.com/aequitas-aod/template-python-project-poetry/issues/95)) ([3753438](https://github.com/aequitas-aod/template-python-project-poetry/commit/37534380d65f5eaa8c6bdd891a5ec9022c3ee180))
+* **deps:** update dependency pytest to v8.3.5 ([#99](https://github.com/aequitas-aod/template-python-project-poetry/issues/99)) ([f8efc33](https://github.com/aequitas-aod/template-python-project-poetry/commit/f8efc33d5e99e7715d2db1caba12ce4afc038c5f))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.148 ([#89](https://github.com/aequitas-aod/template-python-project-poetry/issues/89)) ([100f92e](https://github.com/aequitas-aod/template-python-project-poetry/commit/100f92e0ebfe777842eb4671706063c4b884285d))
+
+### Bug Fixes
+
+* dry-run release if secrets are unset ([4b2f887](https://github.com/aequitas-aod/template-python-project-poetry/commit/4b2f8871d0f1815ccfe91593ee4cf6cecb36f3be))
+* permissions in deploy job ([220f351](https://github.com/aequitas-aod/template-python-project-poetry/commit/220f351498cb339eda6870be17a333bdb4290bcd))
+* restore GITHUB_TOKEN in ci for deployment ([f942dbd](https://github.com/aequitas-aod/template-python-project-poetry/commit/f942dbdc89a42fd69538c711f36143a42d5db380))
+* typo in init script ([97f89f3](https://github.com/aequitas-aod/template-python-project-poetry/commit/97f89f3d0798d3659952bfe4b7b81ee62abf35f6))
+
+### General maintenance
+
+* update readme to mention init.yml ([8a2eedc](https://github.com/aequitas-aod/template-python-project-poetry/commit/8a2eedc5cec09c0b1f622dc5cb5a938394df92b9))
+
 ## [2.3.1](https://github.com/aequitas-aod/template-python-project-poetry/compare/2.3.0...2.3.1) (2025-10-18)
 
 ### Bug Fixes
