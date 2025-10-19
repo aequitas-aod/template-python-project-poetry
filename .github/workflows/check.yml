@@ -93,6 +93,9 @@ jobs:
 
   deploy:
     name: Deploy
+    permissions: 
+      contents: write
+      packages: write
     needs:
       - test
     uses: ./.github/workflows/deploy.yml
