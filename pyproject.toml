@@ -10,6 +10,7 @@ license = "Apache 2.0"
 readme = "README.md"
 
 [tool.poetry.dependencies]
+# update the Python versions in .github/workflows/check.yml if you change this
 python = ">= 3.9.0 < 4.0.0"
 
 [tool.poetry.group.dev.dependencies]
@@ -35,8 +36,9 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [[tool.poetry.source]]
-name = "PyPI"
-priority = "primary"
+name = "pypi-test"
+url = "https://test.pypi.org/simple/"
+priority = "supplemental"
 
 [tool.mypy]
 ignore_missing_imports = true
