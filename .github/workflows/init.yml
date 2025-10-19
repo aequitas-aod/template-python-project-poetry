@@ -22,7 +22,7 @@ jobs:
         shell: bash
 
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Rename project
         run: bash rename-template.sh $(basename ${{ github.repository }})
