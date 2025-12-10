@@ -15,6 +15,8 @@ for FILE in `find .github -type f  -not -iname '*.pyc'`; do
     sed -i'.bak' -e "s/my_project/$NEW_NAME/g" $FILE
 done
 
+sed -i'.bak' -e "s/template-python-project-poetry/$NEW_NAME/g" pyproject.toml
+
 mv my_project $NEW_NAME
 
 rm .github/**/*.bak || true
