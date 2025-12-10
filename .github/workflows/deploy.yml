@@ -58,7 +58,7 @@ jobs:
         shell: bash
         run: |
           npm install
-          npx semantic-release --branches `git branch --show-current`
+          npx semantic-release
         env:
           PYPI_USERNAME: ${{ secrets.PYPI_USERNAME }}
           PYPI_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
