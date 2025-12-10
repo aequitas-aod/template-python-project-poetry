@@ -37,18 +37,9 @@ static-checks = [
     "mypy",
 ]
 
-
 [tool.poetry.scripts]
 my_project = "my_project:main"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
-
-[[tool.poetry.source]]
-name = "pypi-test"
-url = "https://test.pypi.org/simple/"
-priority = "supplemental"
-
-[tool.mypy]
-ignore_missing_imports = true
