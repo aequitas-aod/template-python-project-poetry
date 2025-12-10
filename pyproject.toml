@@ -19,14 +19,24 @@ mypy = "^1.10.1"
 poethepoet = "^0.37.0"
 poetry = "^1.8.3"
 pytest = "^8.3.5"
+ruff = "^0.14.8"
 
 [tool.poe.tasks]
 test = "pytest"
 coverage = "coverage run -m pytest"
 coverage-report = "coverage report -m"
 coverage-html = "coverage html"
+ruff-check = "ruff check"
+ruff-fix = "ruff check --fix"
+format = "ruff format"
+format-check = "ruff format --check"
 mypy = "mypy my_project tests"
 compile = "python -m compileall my_project tests"
+static-checks = [
+    "ruff-check",
+    "mypy",
+]
+
 
 [tool.poetry.scripts]
 my_project = "my_project:main"
