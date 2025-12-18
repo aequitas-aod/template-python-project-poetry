@@ -37,9 +37,6 @@ static-checks = [
     "mypy",
 ]
 
-[tool.poetry.scripts]
-my_project = "my_project:main"
-
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"

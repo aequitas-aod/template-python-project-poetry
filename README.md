@@ -92,11 +92,31 @@ Overview:
     poetry install
     ```
 
-### Run unit tests
+### Run Tests
+  Execute the test suite using `pytest`:
+  ```bash
+  poetry run poe test
+  ```
 
-```bash
-poetry run poe test
-```
+### Run Tests with Coverage
+  Execute the test suite with coverage reporting:
+  ```bash
+  poe coverage
+  ```
+  and generate a report with `poe coverage-report` or `poe coverage-html`
+
+
+### Run Static Checks
+  Perform static code analysis using both `mypy` and `ruff`:
+  ```bash
+  poe static-checks
+  ```
+
+### Format Code
+  Format your code using `ruff`:
+  ```bash
+  poe format
+  ```
 
 > Tests are automatically run in CI, on all pushes on all branches.
 > There, tests are executed on multiple OS (Win, Mac, Ubuntu) and on multiple Python versions.
@@ -105,12 +125,7 @@ poetry run poe test
 
 This will execute the `__main__.py` file in the `my_project` package:
 ```bash
-python -m my_project
-```
-
-or alternatively:
-```bash
-my_project
+poetry run python -m my_project
 ```
 
 the latter is possible because of the script defined in the `pyproject.toml` file.
