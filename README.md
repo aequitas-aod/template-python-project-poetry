@@ -100,7 +100,7 @@ Overview:
 ### Run Tests with Coverage
   Execute the test suite with coverage reporting:
   ```bash
-  poe coverage
+  poetry run poe coverage
   ```
   and generate a report with `poe coverage-report` or `poe coverage-html`
 
@@ -108,14 +108,16 @@ Overview:
 ### Run Static Checks
   Perform static code analysis using both `mypy` and `ruff`:
   ```bash
-  poe static-checks
+  poetry run poe static-checks
   ```
 
 ### Format Code
   Format your code using `ruff`:
   ```bash
-  poe format
+  poetry run poe format
   ```
+
+> Note: you can enter a Poetry shell via `poetry shell` to avoid prefixing commands with `poetry run`.
 
 > Tests are automatically run in CI, on all pushes on all branches.
 > There, tests are executed on multiple OS (Win, Mac, Ubuntu) and on multiple Python versions.
