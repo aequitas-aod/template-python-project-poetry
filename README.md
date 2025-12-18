@@ -68,8 +68,7 @@ Overview:
 10. Change the assignee for pull-requests for automatic dependency updates by editing `renovate.json`
     + currently defaults to @gciatto
 
-11. Add your PyPI credentials as secrets of the GitHub repository
-    - `PYPI_USERNAME` (resp. `PYPI_PASSWORD`) for your username (resp. password)
+11. Add your `PYPI_TOKEN` token as secrets of the GitHub repository
     - this may require you to register on PyPi first
 
 12. Generate a GitHub token and add it as a secret of the GitHub repository, named `RELEASE_TOKEN`
