@@ -19,7 +19,7 @@ jobs:
     name: Preliminary Checks
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0 # all history
 
@@ -82,7 +82,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       - name: Checkout Code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Install Poetry
         run: |
